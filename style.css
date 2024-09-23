@@ -85,6 +85,10 @@
     font-weight: 500; !important;
 }
 
+.fs-2rem {
+    font-size: 2rem;
+}
+
 .fs-3rem {
     font-size: 3rem;
 }
@@ -93,6 +97,11 @@
     font-family: 'DM Sans', serif;
     font-weight: 400;
     font-style: normal;
+}
+
+p {
+    margin: 0;
+    line-height: 1;
 }
 
 body {
@@ -105,9 +114,7 @@ body {
 #grid__container {
     display: grid;
     padding: 2rem;
-    max-width: 80vw;
-    /*max-height: 80vh;*/
-    /*overflow: hidden;*/
+    max-width: 60rem;
     gap: 2em;
 }
 
@@ -116,20 +123,40 @@ body {
     padding: 2em;
     display: flex;
     flex-direction: column;
-    align-content: center;
+    gap: 1em;
     justify-content: center;
 }
 
+.card:first-of-type {
+    text-align: center;
+}
+
+/* EXPLIZIT IMAGE SIZING */
 .card img {
     width: 100%;
     height: auto;
+}
+
+
+
+
+
+
+
+
+
+.card:first-of-type {
+    align-items: center;
+}
+
+.card:nth-of-type(4) {
+    justify-content: flex-start;
 }
 
 @media screen and (min-width: 95rem) {
     #grid__container {
         padding: 0;
         grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: 1fr 0.5fr 0.5fr 1fr;
         grid-template-areas:
             "one two two three"
             "one four five three"
@@ -168,4 +195,45 @@ body {
     .card:nth-of-type(8) {
         grid-area: six;
     }
+
+    .card:nth-of-type(5) {
+        flex-direction: row;
+    }
+
+    /* EXPLIZIT IMAGE SIZING */
+    .card:first-of-type img {
+        width: 50%;
+        height: auto;
+    }
+
+    .card:nth-of-type(2) img {
+        height: 40px;
+        object-fit: cover;
+        object-position: left;
+    }
+
+    .card:nth-of-type(3) img {
+        height: 70px;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .card:nth-of-type(4) img {
+        height: 240px;
+        object-fit: cover;
+        object-position: left;
+        width: calc(100% + 2em);
+
+    }
+
+    .card:nth-of-type(5) img {
+        height: 200px;
+    }
+
+    .card:last-of-type img {
+        width: 240px;
+    }
+
+
+
 }
