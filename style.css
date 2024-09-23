@@ -1,0 +1,171 @@
+/* VARIABLES & FONT-FACE */
+:root {
+    --clr-purple-100: hsl(254, 88%, 90%);
+    --clr-purple-500: hsl(256, 67%, 59%);
+    --clr-yellow-100: hsl(31, 66%, 93%);
+    --clr-yellow-500: hsl(39, 100%, 71%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-black: hsl(0, 0%, 7%);
+    --font-size-paragraph: 18px;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('./assets/fonts/static/DMSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('./assets/fonts/static/DMSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('./assets/fonts/static/DMSans-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+
+
+/* UTILITY CLASSES */
+.bg-clr-purple-100 {
+    background-color: var(--clr-purple-100);
+}
+
+.bg-clr-purple-500 {
+    background-color: var(--clr-purple-500);
+}
+
+.text-clr-purple-500 {
+    color: var(--clr-purple-500);
+}
+
+.bg-clr-yellow-100 {
+    background-color: var(--clr-yellow-100);
+}
+
+.text-clr-yellow-100 {
+    color: var(--clr-yellow-100);
+}
+
+.bg-clr-yellow-500 {
+    background-color: var(--clr-yellow-500);
+}
+
+.text-clr-yellow-500 {
+    color: var(--clr-yellow-500);
+}
+
+.bg-clr-white {
+    background-color: var(--clr-white);
+}
+
+.text-clr-white {
+    color: var(--clr-white);
+}
+
+.bg-clr-black {
+    background-color: var(--clr-black);
+}
+
+.text-clr-black {
+    color: var(--clr-black);
+}
+
+.font-style-italic {
+    font-style: italic; !important;
+}
+
+.font-weight-medium {
+    font-weight: 500; !important;
+}
+
+.fs-3rem {
+    font-size: 3rem;
+}
+
+* {
+    font-family: 'DM Sans', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#grid__container {
+    display: grid;
+    padding: 2rem;
+    max-width: 80vw;
+    /*max-height: 80vh;*/
+    /*overflow: hidden;*/
+    gap: 2em;
+}
+
+.card {
+    border-radius: 15px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (min-width: 95rem) {
+    #grid__container {
+        padding: 0;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 1fr 0.5fr 0.5fr 1fr;
+        grid-template-areas:
+            "one two two three"
+            "one four five three"
+            "six four five three"
+            "six seven eight eight"
+    }
+
+    .card:nth-of-type(1) {
+        grid-area: two;
+    }
+
+    .card:nth-of-type(2) {
+        grid-area: four;
+    }
+
+    .card:nth-of-type(3) {
+        grid-area: five;
+    }
+
+    .card:nth-of-type(4) {
+        grid-area: three;
+    }
+
+    .card:nth-of-type(5) {
+        grid-area: eight;
+    }
+
+    .card:nth-of-type(6) {
+        grid-area: seven;
+    }
+
+    .card:nth-of-type(7) {
+        grid-area: one;
+    }
+
+    .card:nth-of-type(8) {
+        grid-area: six;
+    }
+}
